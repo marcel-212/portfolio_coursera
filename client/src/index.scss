@@ -1,0 +1,43 @@
+$dark: #1c1c14;
+$dark-soft: #3C3D37;
+$light-soft: rgba(221, 236, 240);
+$light: #eeede3;
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: $light-soft;
+  background-color: $dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3{
+  line-height: 1;
+}
+
+img{
+  display: block;
+}
+
+button{
+  background-color: transparent;
+  font-size: inherit;
+  border: none;
+}
+
+a:hover, button:hover{
+  cursor: pointer;
+}

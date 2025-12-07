@@ -1,0 +1,131 @@
+$dark: #1c1c14;
+$dark-soft: #3C3D37;
+$light-soft: rgba(221, 236, 240);
+$light: #eeede3;
+
+header{
+    background-color: $dark-soft;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+    ul{
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    button{
+        letter-spacing: 2px;
+        opacity: 0.7;
+        
+        &:hover{
+            opacity: 1;
+        }
+    }
+}
+
+.socials{
+    img, svg{
+        display: block;
+        size: 24px;
+        width: 24px;
+        height: 24px;
+        color: $light;
+        opacity: 0.7;
+
+        &:hover{
+            opacity: 1;
+        }
+    }
+}
+
+main{
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.banner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+    min-height: 100vh;
+
+    &-image{
+        img{
+            border-radius: 50%;
+            max-width: 160px;
+        }
+    }
+}
+
+.projects{
+    
+    padding: 1rem;
+
+    h1{
+        margin-bottom: 2rem;
+    }
+
+    &-list{
+        display: grid;
+        grid-template-columns: repeat(2,calc(50% - 1rem));
+        gap: 2rem;
+    }
+}
+
+.card{
+    border: 1px solid $light-soft;
+    max-width: 100%;
+    
+    &-image{
+        max-height: 320px;
+        overflow: hidden;
+    }
+
+    &-info{
+        padding: 1rem;
+
+        &__btn{
+            margin-top: auto;
+        }
+
+        h3{
+            margin-bottom: 1rem;
+        }
+
+        &__btn{
+            margin-top: 1rem;
+            padding: 0.5rem;
+            border: 1px solid $light-soft;
+            max-width: 160px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            text-decoration: none;
+            color: $light-soft;
+            gap: 0.5rem;
+
+            &:hover{
+                background-color: $light-soft;
+                color: $dark;
+            }
+        }
+    }
+}
+
+footer{
+    border-top: 2px solid $light;
+    margin-top: 2rem;
+    padding: 2rem;
+    text-align: center;
+
+    p{
+        letter-spacing: 2px;
+    }
+}
