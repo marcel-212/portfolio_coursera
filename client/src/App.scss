@@ -4,12 +4,19 @@ $light-soft: rgba(221, 236, 240);
 $light: #eeede3;
 
 header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 56px;
     background-color: $dark-soft;
     padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
+    transition: 0.2s linear;
+    z-index: 99999;
 
     ul{
         list-style-type: none;
@@ -28,6 +35,14 @@ header{
     }
 }
 
+.header-hide{
+    transform: translateY(-100%);
+}
+
+.header-show{
+    transform: translateY(0);
+}
+
 .socials{
     img, svg{
         display: block;
@@ -44,15 +59,17 @@ header{
 }
 
 main{
-    max-width: 1440px;
+    max-width: 1024px;
     margin: 0 auto;
 }
 
 .banner{
     display: flex;
+    flex-direction: column;
+    text-align: center;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
     padding: 1rem;
     min-height: 100vh;
 
@@ -65,13 +82,6 @@ main{
 }
 
 .projects{
-    
-    padding: 1rem;
-
-    h1{
-        margin-bottom: 2rem;
-    }
-
     &-list{
         display: grid;
         grid-template-columns: repeat(2,calc(50% - 1rem));
@@ -79,13 +89,36 @@ main{
     }
 }
 
+@media(max-width: 860px){
+    .projects-list{
+        grid-template-columns: 1fr;
+    }
+}
+
+.projects, .contact{
+    padding: 1rem;
+
+    h1{
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+}
+
 .card{
-    border: 1px solid $light-soft;
     max-width: 100%;
-    
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 1px 1px 6px 1px rgba(221, 236, 240, 0.2);
+
     &-image{
         max-height: 320px;
         overflow: hidden;
+
+        img{
+            width: 120%;
+            position: relative;
+            left: -10%;
+        }
     }
 
     &-info{
@@ -110,10 +143,51 @@ main{
             text-decoration: none;
             color: $light-soft;
             gap: 0.5rem;
+            opacity: 0.3;
 
             &:hover{
-                background-color: $light-soft;
-                color: $dark;
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
+.contact{
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+
+    form{
+        margin: 0 auto;
+        max-width: 680px;
+        box-shadow: 1px 1px 6px 1px rgba(221, 236, 240, 0.2);
+        border-radius: 12px;
+        padding: 1.5rem;
+
+        font-size: 18px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        input[type='text'], input[type='email'],select, textarea{
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            border: none;
+            padding: 0.5rem;
+        }
+
+        textarea{
+            resize: none;
+            height: 100px;
+        }
+
+        input[type='submit']{
+            padding: 0.5rem;
+            opacity: 0.7;
+            cursor: pointer;
+
+            &:hover{
+                opacity: 1;
             }
         }
     }
@@ -127,5 +201,21 @@ footer{
 
     p{
         letter-spacing: 2px;
+    }
+}
+
+.infobox{
+    border: 1px solid tomato;
+    border-radius: 6px;
+    background-color: rgba(255, 99, 71, 0.5);
+    padding: 1rem;
+    margin: 2rem auto 0 auto;
+    max-width: 680px;
+    position: relative;
+
+    button{
+        position: absolute;
+        right: 0.5rem;
+        top: 0.5rem;
     }
 }

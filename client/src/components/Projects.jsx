@@ -1,6 +1,7 @@
 import Card from './Card'
+import { forwardRef } from 'react';
 
-const Projects = () => {
+const Projects = forwardRef((props, ref) => {
     const mock = [
         {
             "id": 1, "title": "React Space", "link": "https://www.coursera.org/", "description": "Handy tool belt to create amazing AR components in a React app with Redux integration via middleware", "img_url": "https://img.freepik.com/free-photo/programming-background-with-person-working-with-codes-computer_23-2150010125.jpg?semt=ais_hybrid&w=740&q=80"
@@ -17,7 +18,7 @@ const Projects = () => {
     ]
 
     return ( 
-        <section className="projects">
+        <section className="projects" ref={ref}>
             <h1>Featured Projects</h1>
             <div className="projects-list">
                 {mock.map((item)=> (
@@ -26,6 +27,6 @@ const Projects = () => {
             </div>
         </section>
      );
-}
+})
  
 export default Projects;
